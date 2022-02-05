@@ -1,0 +1,51 @@
+<gui>
+	<sprites>
+		<sprite name="itembutton" texture="gui/widget.png"><frame>346 0 32 32</frame></sprite>
+		<sprite name="itembutton-hover" texture="gui/widget.png"><frame>346 32 32 32</frame></sprite>
+		<sprite name="itembutton-down" texture="gui/widget.png"><frame>346 64 32 32</frame></sprite>
+		<sprite name="itembutton-disabled" texture="gui/widget.png"><frame>378 64 32 32</frame></sprite>
+
+		<sprite name="item-empty" texture="gui/activeitems.png"><frame>0 0 24 24</frame></sprite>
+
+%include "gui/scalablebutton_sprites.inc"
+%include "gui/scrollbar_sprites.inc"
+	</sprites>
+
+	<doc>
+		<rect width="328" height="233" color="#000000FF">
+			<!-- List -->
+			<scrollrect id="list-items" width="256" height="176" flow="hboxwrapped" color="#202a26FF" shadow="#0c120fFF" shadowsize="2" />
+
+			<!-- Scrollbar -->
+			<rect offset="256 0" width="3" height="176" spriteset="gui/variable/3pxbar_vert.sval" />
+			<scrollbar forid="list-items" spriteset="scrollbar" outside="true" offset="3 0" buttons-size="14" trough-offset="18" handle-border="2" />
+			<rect offset="267 0" width="3" height="176" spriteset="gui/variable/3pxbar_vert.sval" />
+
+			<!-- Template -->
+			<inventory-button id="template-item" visible="false" spriteset="itembutton" />
+
+			<!-- Separator -->
+			<rect offset="0 176" width="328" height="3" spriteset="gui/variable/3pxbar_hor.sval" />
+
+			<!-- Hotbar -->
+			<rect offset="0 179" width="328" height="54" color="#202a26FF" shadow="#0c120fFF" shadowsize="2">
+				<!-- Hotbar list -->
+				<group id="list-hotbar" inner="true" anchor="0.5 0.5" flow="hbox" spacing="18" />
+
+				<!-- Hotbar template -->
+				<hotbar-item id="template-hotbar" visible="false" width="28" height="46" spriteset="gui/variable/bigwindow_borders.sval" color="#202a26FF" shadow="#0c120fFF" shadowsize="4">
+					<!-- Number -->
+					<text id="number" font="gui/fonts/arial11.fnt" anchor="0.5 0" offset="0 2" />
+
+					<!-- Separator -->
+					<rect offset="0 -26" anchor="0.5 1" width="24" height="3" spriteset="gui/variable/3pxbar_hor.sval" />
+
+					<!-- Icon -->
+					<sprite id="icon" src="item-empty" offset="0 -2" anchor="0.5 1">
+						<rect width="24" height="24" shadow="#0000007F" shadowsize="2" />
+					</sprite>
+				</hotbar-item>
+			</rect>
+		</rect>
+	</doc>
+</gui>

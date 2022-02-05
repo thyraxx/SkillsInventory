@@ -1,0 +1,26 @@
+<gui>
+	<sprites>
+		<sprite name="item-empty" texture="gui/activeitems.png"><frame>0 0 24 24</frame></sprite>
+	</sprites>
+
+	<doc>
+		<group>
+			<!-- Hotbar list -->
+			<group id="list" inner="true" anchor="0.5 1" offset="0 -13" flow="hbox" spacing="2" />
+
+			<!-- Hotbar template -->
+			<hotbar-item id="template" visible="false" width="24" height="35">
+				<!-- Number -->
+				<text id="number" font="gui/fonts/font_hw8.fnt" anchor="0.5 0" offset="0 2" text="1" />
+
+				<!-- Icon -->
+				<sprite id="icon" src="item-empty" anchor="0 1">
+					<rect width="24" height="24" shadow="#0000007F" shadowsize="2" />
+				</sprite>
+
+				<!-- Amount -->
+				<text id="amount" font="gui/fonts/font_hw8.fnt" anchor="1 1" offset="-1 0" text="0" />
+			</hotbar-item>
+		</group>
+	</doc>
+</gui>
